@@ -115,11 +115,13 @@ def audio_3D():
 
 
 def divide_video_to_frames():
-    vidcap = cv2.VideoCapture('C:/Users/std84266/PycharmProjects/pythonProject/Audio/airplane1.mp4')
+    vidcap = cv2.VideoCapture('C:/Users/std848622/pythonProject2/Video/airplane1.mp4')
     success, image = vidcap.read()
     count = 0
     while success:
-        cv2.imwrite("frame%d.jpg" % count, image)  # save frame as JPEG file
+        path = 'C:/Users/std848622/pythonProject2/Images'
+        #cv2.imwrite(os.path.join(path, 'waka.jpg'), img)
+        cv2.imwrite(os.path.join(path, "frame%d.jpg" % count), image)  # save frame as JPEG file
         success, image = vidcap.read()
         print('Read a new frame: ', success)
         count += 1
@@ -190,4 +192,5 @@ def image_orientation():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     #ObjDetect()
-    audio_3D()
+    #audio_3D()
+    divide_video_to_frames()
